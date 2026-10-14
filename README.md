@@ -4,14 +4,14 @@ This repository contains the Simple MVC Application from week 6.  This Applicati
 1. Install the MySQL2 Library to your project
 ```
 npm install mysql2
-,,,
+```
 2. Add the database connection code to your `userDB.js` file. All of the required connection values are in the `assignDB.sql` file. (Refer to the MYSQL2 Documentation)
 3. Convert your `getUsers()` function to execute the SQL and return the array of user JSON objects.  Update your View, `manageUsers.ej` to display all of the columns correctly. (Refer to the MYSQL2 Documentation)
 4. Convert your `addUser()` function to store the new user in the **users** table. (Refer to the MYSQL2 Documentation)
 
 ![MVC Diagram](mvcDesign.png)
 
-To Create the assignDb database
+To Create the **assignDD** database
 ```
 sudo mysql < assignDB.sql
 ```
