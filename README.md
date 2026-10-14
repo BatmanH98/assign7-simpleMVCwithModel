@@ -1,14 +1,20 @@
-## Simple Model-View-Controller Example
+## Assignment 7: Simple Model-View-Controller Database Backend Modification
 
-**Model-View-Controller (MVC)** is a software design pattern that splits an application into three connected parts: the **Model (data and logic)**, the **View (user interface)**, and the **Controller (intermediary handles user input and interacts with the Model)**.In this server-side Node.js/Express application, using EJS (Embedded JavaScript templates and Bootstrap for the View templates:
-* the server handles the routing and the controller
-* processing the HTTP Request data
-* reading it or writing it to the database using the Model
-* injects the response into an EJS template styled with Bootstrap CSS
-* sends fully rendered HTML back to the browser.
+This repository contains the Simple MVC Application from week 6.  This Application has just an array of JSON objects in the `userDB.js` file.  This is the model file in MVC and it contains all of the database interaction.  You will need to use **callbacks** for your MySQL2 calls, **Not Promises**. You need to make the following modifications to this application:
+1. Install the MySQL2 Library to your project
+```
+npm install mysql2
+,,,
+2. Add the database connection code to your `userDB.js` file. All of the required connection values are in the `assignDB.sql` file. (Refer to the MYSQL2 Documentation)
+3. Convert your `getUsers()` function to execute the SQL and return the array of user JSON objects.  Update your View, `manageUsers.ej` to display all of the columns correctly. (Refer to the MYSQL2 Documentation)
+4. Convert your `addUser()` function to store the new user in the **users** table. (Refer to the MYSQL2 Documentation)
 
 ![MVC Diagram](mvcDesign.png)
 
+To Create the assignDb database
+```
+sudo mysql < assignDB.sql
+```
 To run the application.  Clone the repository to your VM.and from the repository directory:
 ```
 node server.js
