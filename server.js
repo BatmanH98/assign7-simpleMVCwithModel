@@ -11,14 +11,28 @@ app.set("view engine", "ejs");
 
 // ** Routes ***
 app.get("/", function (req, res) {
-    userDB.getUsers(function (data) {
+    userDB.getUsers(function (err, data) {
+		
+		if (err){
+			console.error(err);
+			return res.status(500).send("DB ERR");
+		}
+		
         console.log(data);
         res.render("manageUsers", { users: data });
     });
 });
 
+
+
 app.post("/users", function (req, res) {
-    userDB.addUser(req.body, function (data) {
+    userDB.addUser(req.body, function (err, data) {
+		
+		if (err){
+			console.error(err);
+			return res.status(500).send("DB ERR");
+		}
+		
         console.log(data);
         res.redirect("/");
     });

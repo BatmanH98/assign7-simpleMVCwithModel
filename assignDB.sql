@@ -37,3 +37,5 @@ INSERT INTO users (fname, lname, username, passwd) VALUES
 ('Ashley', 'Lee', 'alee', 'butter#'),
 ('Thomas', 'Walker', 'twalker', 'p@ssword!99'),
 ('Amanda', 'Hall', 'ahall', 'coffeelover');
+
+
