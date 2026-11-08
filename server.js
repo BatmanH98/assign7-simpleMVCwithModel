@@ -24,6 +24,11 @@ app.get("/", function (req, res) {
 });
 
 
+app.get("/users/add", function (req, res){
+	res.render("addUser");
+});
+
+
 
 app.post("/users", function (req, res) {
     userDB.addUser(req.body, function (err, data) {
@@ -36,6 +41,19 @@ app.post("/users", function (req, res) {
         console.log(data);
         res.redirect("/");
     });
+});
+
+
+app.post("/users/:id/delete", function (req, res){
+	userDB.deleteUser(req.params.id, function (err, data) {
+		
+		if (err) {
+			console.error(err);
+			return res.status(500).send("DB ERR");
+		}
+
+		res.redirect("/");
+	});
 });
 
 

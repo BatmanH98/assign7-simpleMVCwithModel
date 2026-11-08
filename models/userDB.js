@@ -36,6 +36,19 @@ function addUser(user, callback) {
 	});
 }
 
+
+function deleteUser(id, callback) {
+	const sql = "DELETE FROM users WHERE userID = ?";
+	
+	connection.query(sql, [id], function (err, result) {
+		if (err) {
+			return callback(err);
+		}
+		
+		callback(null, result);
+	});
+}
+
 /*const users = [
   { "id": 1, "fname": "Jim", "lname": "Smith", "username": "jsmith" },
   { "id": 2, "fname": "Jack", "lname": "Kennedy", "username": "jkennedy" },
@@ -47,4 +60,8 @@ function addUser(user, callback) {
   { "id": 8, "fname": "Jordan", "lname": "Wilson", "username": "jwilson" }
 ];*/
 
-module.exports = { getUsers, addUser };
+module.exports = { getUsers, addUser, deleteUser};
+
+
+
+
